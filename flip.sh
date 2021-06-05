@@ -1,11 +1,21 @@
 # Flip Coin Simulation Problem
 
-head=0
-tail=1
+loop=0
+heads=0
+tails=0
+
+while [ loop -le 10 ]
+do
 x=$((RANDOM%2))
-if [ $x -eq 0]
-then 
-echo " head is the winner "
+if [ $x -eq 0 ]
+then
+echo "winner : heads"
+((heads++))
 else 
-echo " tail is the winner "
+echo "winner : tails"
+((tails++))
 fi
+((loop++))
+done
+echo "heads :$heads"
+echo "tails :$tails"
